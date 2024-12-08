@@ -10,8 +10,7 @@ interface CategoryProductsDisplayProps {
 
 const CategoryProductsDisplay: React.FC<CategoryProductsDisplayProps> = ({ product }) => {
   const [isModalOpen, setModalOpen] = useState(false);
-  const [addBasketItem] = useMutation(ADD_TO_BASKET, {
-  });
+  const [addBasketItem] = useMutation(ADD_TO_BASKET);
   const handleAddToCart = async (product: Product) => {
     await addBasketItem({
       variables: { productId: product._id, quantity: 1 },
